@@ -7,11 +7,10 @@ delay (int number_of_seconds)
 {
 int milli_seconds = 1000 * number_of_seconds;
 clock_t start_time = clock ();
-while (clock () < start_time + milli_seconds)
-
-;
+while (clock () < start_time + milli_seconds);
 
 };
+
 
 
 
@@ -24,7 +23,7 @@ int x;
 
 int y;
 srand(time(NULL));
-int zaman = rand()%9 + 5;
+int zaman = rand()%9 + 4;
 int dolmus = rand()%2 + 1;
 int sapik = rand()%2 + 1;
 int kuzey;
@@ -41,6 +40,7 @@ int agresif;
 int cay;
 int counter = 1;
 int gong;
+int korona=1;
 
 
 
@@ -347,20 +347,114 @@ if(karakter == 1 ){
                     delay(1);
                     printf(".\n");
                     delay(1);
+                    system("cls");
+                    delay(1);
 
 
-                    printf("\nMerhaba EFECAN! Bugun saat %d'da uyandin\n\nKahvaltida ne yemek istersin?\n\n1. Gong\n2. Gong\n", zaman);
-                    scanf("%d", &a);
-                    while(alet==2){
-                        printf("\nGong yedin biraz daha yemek ister misin?\n\n1. Evet\n2. Evet\n\n");
-                        scanf("%d", a);
+                    printf("\nMerhaba EFECAN! Bugun saat %d'da uyandin\n\nKahvaltida ne yemek istersin?\n\n1. Gong\n", zaman);
+                    scanf("%d", &gong);
+                    delay(1);
+                    while(gong == 1){
+                        printf("\nGong yedin biraz daha yemek ister misin?\n\n1. Evet\n2. Hayir\n\n");
+                        scanf("%d", &gong);
+                        korona++;
                     }
+                    if(korona>=5){
+                        delay(1);
+                        printf("\nMidende garip bir agri var. Neden oldugunu bilmiyorsun.\nYine de okula gitmek ister misin?\n\n1. Evet\n2. Hayir\n\n");
+                        scanf("%d", &ders);
+                        delay(1);}
+                        else{
+                            printf("\nOkula gitmek istiyor musun?\n\n1. Evet\n2. Hayir\n\n");
+                            scanf("%d", &ders);
+                        }
+                        if(ders==1){
+                                printf("Yanina ne almak istiyorsun?\n\n1. Gong\n2. Bicak\n3. Biber Gazi\n");
+        scanf("%d", &alet);
+        printf("Dolmusla mi taksiyle mi gitmek istiyorsun?\n1. Dolmus\n2. Taksi\n");
+        scanf("%d", &dolmus);
+        delay(1);
+        if(ders == 1){
+            if (dolmus == 1){
+                printf("\nDolmus ile gitmeye karar verdin.\n");
+                delay(2);
+                if(sapik == 1){
+                    printf("Dolmusta yanina degisik bi herif oturdu.\nPis kokuyor ve garip garip bakiyor. Ne yapmak istiyorsun?\n\n1. Dolmustan in\n2.Gormezden gel.\n");
+                    scanf("%d", &dolmusin);
+                    delay(1);
+
+                    if(dolmusin == 2){
+                        agresif = rand()%2+1;
+                        if(agresif == 1 && alet == 2){
+                            printf("Yanina oturan adam senden bir lira istedi. Sabah sabah senle mi ugrasicam diyerek adamin boynuna bicak sapladin.\nAdam oldu.\n");
+                            delay(2);
+                            printf("Dolmuscu kizim bunlar boyle iste bu devirde gote mukayet olmak lazim dedi ve seni okula birakti.\n");
+                        }
+                        if(agresif == 1 && alet == 3){
+                            printf("Yanina oturan adam senden bir lira istedi. Sabah sabah senle mi ugrasicam diyerek adama biber gazi siktin.\n\n");
+                            delay(2);
+                            printf("Tutuklandin.\n");
+                            delay(50);
+                            return 0;
+                    }
+                     if(agresif == 1 && alet == 1){
+                                printf("Adam senden bir lira istedi. Yok deyince seni bicakladi.\n");
+                     delay(2);
+                     printf("Oldun.");
+                     delay(50);
+                     return 0;
+                    }
+                    if(agresif == 2){
+                        printf("Dolmusa vericek bozuk paran cikmadi. Yanindaki adam senin parani odedi.\n");
+                        delay(2);
+                        printf("Onyarginin kotu bir sey oldugunu dusundun ve kendinden utandin.\n");
+
+                    }
+                }
+            }
+            if("sapik == 2"){
+                printf("\nHic bir sikinti olmadan okula ulastin.\n");
+            }
+        }
+        if(dolmusin == 1){
+            dolmus = 2;
+        }
+        if(dolmus == 2){
+            printf("Taksi ile gitmeye karar verdin.\n");
+            sapik = rand()%5+1;
+            delay(2);
+            if(sapik == 1){
+                printf("\nTaksici kral adam cikti. Sikinti olmadan okula ulastin.\n");
+            }
+            if(sapik >= 2){
+                printf("\nTaksici aynadan garip garip bakmaya basladi. Baktin ki normalde gitmesi gereken yoldan farkli gidiyor.\n");
+                delay(1);
+                printf("Taksiciye neden farkli yoldan gittigini sordun. Taksici kendisinin orospu cocugu oldugunu ve kendini kontrol edemedigini soyledi.\n");
+                delay(2);
+                if(alet == 1){
+                    printf("\nTaksici bi anda arabayi durdurup trafigin onune atladi.\n");
+                    delay(1);
+                    printf("\nOrospu cocuguydu zaten diyerek arabasini alip okula devam ettin.\n");
+                }
+                if(alet == 2){
+                    printf("\nCebindeki bicagi cikarip taksiciye sapladin. Sonra taksicinin arabasini alarak yoluna devam ettin.\n");
+                }
+                if(alet == 3){
+                    printf("\nTaksiciye biber gazi siktin. Taksici aci cekerek arabadan atladi ve taksiciye araba carpti.\n");
+                    delay(2);
+                    printf("\nTaksicinin arabasini alarak okula gittin.\n");
+                }
+            }
+        }
+        }
+                        }
+                    }}
 
 
                 }
             }
-    }
-}
+
+
 
 
 
