@@ -11,6 +11,25 @@ while (clock () < start_time + milli_seconds);
 
 };
 
+void kuzey(){
+    int kuzey=1;
+while(kuzey==1){
+            printf("\nKuzey'i ariyorsun\n");
+            delay(1);
+            printf(".\n");
+            delay(1);
+            printf(".\n");
+            delay(1);
+            printf(".\n");
+            delay(1);
+            printf(".\n");
+            delay(1);
+            printf(".\n");
+            delay(1);
+            printf("Kuzey telefonu acmadi. Tekrar denemek istiyor musun?\n\n1. Evet\n2. Hayir\n");
+            scanf("%d", &kuzey);
+        }}
+
 
 
 
