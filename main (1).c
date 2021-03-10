@@ -1,7 +1,11 @@
 #include <stdio.h>
 #include <time.h>
 #include<stdlib.h>
-#include <time.h>
+#include <windows.h>
+#pragma comment(lib, "winmm.lib")
+#include <conio.h>
+#include <mmsystem.h>
+
 void
 delay (int number_of_seconds)
 {
@@ -37,6 +41,7 @@ while(kuzey==1){
 int
 main ()
 {
+
 
 int x;
 
@@ -373,7 +378,7 @@ if(karakter == 1 ){
                     printf("\nMerhaba EFECAN! Bugun saat %d'da uyandin\n\nKahvaltida ne yemek istersin?\n\n1. Gong\n", zaman);
                     scanf("%d", &gong);
                     delay(1);
-                    while(gong == 1){
+                    while(gong == 1){//5ten fazla gong yenirse gong virusu hikayesi aciliyor. Hikaye secenekleri icin korona>=5
                         printf("\nGong yedin biraz daha yemek ister misin?\n\n1. Evet\n2. Hayir\n\n");
                         scanf("%d", &gong);
                         korona++;
@@ -407,7 +412,7 @@ if(karakter == 1 ){
                         if(agresif == 1 && alet == 2){
                             printf("Yanina oturan adam senden bir lira istedi. Sabah sabah senle mi ugrasicam diyerek adamin boynuna bicak sapladin.\nAdam oldu.\n");
                             delay(2);
-                            printf("Dolmuscu kizim bunlar boyle iste bu devirde gote mukayet olmak lazim dedi ve seni okula birakti.\n");
+                            printf("Dolmuscu oglum bunlar boyle iste bu devirde gote mukayet olmak lazim dedi ve seni okula birakti.\n");
                         }
                         if(agresif == 1 && alet == 3){
                             printf("Yanina oturan adam senden bir lira istedi. Sabah sabah senle mi ugrasicam diyerek adama biber gazi siktin.\n\n");
@@ -465,6 +470,27 @@ if(karakter == 1 ){
                 }
             }
         }
+        delay(1);
+        printf("\nOkula ulastin.\n");
+        if(korona >= 5){
+                delay(1);
+            printf("\nHaberlerde Istanbul'da bi adamin supermarkete saldirdigini gordun.\nBu olayin tam da yolunun ustunde oldugunu fark ettin.\nSansa yasiyoruz abi diye dusundun.\n");
+        }
+        delay(1);
+        printf("\nDersinin baslamasina yarim saat var.\nNe yapmak istiyorsun?\n\n1. Kahve ic\n2. Sinifa gidip otur.\n\n");
+        scanf("%d", &kahve);
+        delay(1);
+        if(kahve == 1){
+            printf("\nKahve almak icin sira bekliyorsun. O sirada arkanda bekleyen guzel bir kiz cok sira olmasindan sikayet etti.\n");
+            delay(1);
+            if(korona>=5){
+                printf("\nBir anda miden agridigi icin osurmak zorunda kaldin. Guzel kiz guldu.\n");
+                delay(1);
+            }
+
+        }
+
+
         }
                         }
                     }}
